@@ -51,6 +51,15 @@ tail file — output the last 10 lines of file
 tail -f file — output the contents of file as it grows, starting with the last 10 lines
 
 vim file — edit file
+yy(# of lines) - yank (copy)
+dd(# of lines) - delete
+p - paste line below current line
+Shift + p - paste line above current line
+u - undo
+r - redo
+i - insert mode
+v - visual mode
+
 
 alias name 'command' — create an alias for a command
 
