@@ -72,7 +72,15 @@ df — show disk usage
 
 du — show directory space usage
 
-free — show memory and swap usage
+free — show memory and swap usage 
+free -m - shows memory in megabytes , free - g - shows memory in gigabytes
+
+vmstat -a - performance monitoring
+vmstat 2 3 - its dispaly every 2 second with 3 intervals
+vmstat -t 2 3 - this disdplay every 2 second with 3 intervals with time
+
+sar - collect, repots or save system activity information
+command : sar -u, sar -r
 
 whereis app — show possible locations of app
 
@@ -93,6 +101,10 @@ PERMISSIONS
 ls -l — list items in current directory and show permissions
 
 chmod ugo file — change permissions of file to ugo - u is the user's permissions, g is the group's permissions, and o is everyone else's permissions. The values of u, g, and o can be any number between 0 and 7.
+
+![Permission](https://user-images.githubusercontent.com/64666960/137629978-de9e2e51-09f3-4e54-ab3b-81a2f81e5caf.PNG)
+
+![Permission1](https://user-images.githubusercontent.com/64666960/137630140-50529d69-05cc-4379-99df-5b3e05e49af5.PNG)
 
 7 — full permissions
 
@@ -191,3 +203,17 @@ alt+b — move cursor backward 1 word
 ## scp copy in aws 
 only file :- scp -i r_login.pem  artifactory-oss-6.7.2.tar.gz  ec2-user@34.222.132.1:/home/ec2-user 
 for folder :- scp -ri r_login.pem  artifactory-oss-6.7.2.tar.gz  ec2-user@34.222.132.1:/home/ec2-user
+
+
+To reduce or shrink the size of LVM partioned:
+fdisk does not have flexibilty to shrink the size of partion , once its created that its and this  can be done with advance lvm (logical volume manager)
+Actions to perform:
+unmount filesystem using umount command
+syntax : umount /lvm  exmaple :umount /dev/zoom/linux /lvm 
+e2fsck -f directory name , exmaple : e2fsck -f /dev/zoom/linux
+User resize2fs command:
+sysntex : resize2fs /dev/zoom/linux 3gb
+lvreduc -L 3gb /dev/zoom/linux 
+Then mmount it back
+mount /dev/zoom/linux /lvm 
+
