@@ -167,6 +167,14 @@ dig -x host — reverse lookup host
 
 lsof -i tcp:1337 — list all processes running on port 1337
 
+![Network1](https://user-images.githubusercontent.com/64666960/138300855-986a98e4-547f-4dff-951c-01bff66df982.PNG)
+
+![Network2](https://user-images.githubusercontent.com/64666960/138300900-310cf9d8-5bb7-415f-9d24-1fe6c53fd813.PNG)
+
+ifup - To enable an network interface
+
+ifdown - To disable an network interface
+
 SEARCHING
 
 grep pattern files — search for pattern in files
@@ -211,18 +219,29 @@ alt+b — move cursor backward 1 word
 
 ## scp copy in aws 
 only file :- scp -i r_login.pem  artifactory-oss-6.7.2.tar.gz  ec2-user@34.222.132.1:/home/ec2-user 
+
 for folder :- scp -ri r_login.pem  artifactory-oss-6.7.2.tar.gz  ec2-user@34.222.132.1:/home/ec2-user
 
 
 To reduce or shrink the size of LVM partioned:
+
 fdisk does not have flexibilty to shrink the size of partion , once its created that its and this  can be done with advance lvm (logical volume manager)
 Actions to perform:
+
 unmount filesystem using umount command
+
 syntax : umount /lvm  exmaple :umount /dev/zoom/linux /lvm 
+
 e2fsck -f directory name , exmaple : e2fsck -f /dev/zoom/linux
+
 User resize2fs command:
+
 sysntex : resize2fs /dev/zoom/linux 3gb
+
 lvreduc -L 3gb /dev/zoom/linux 
+
 Then mmount it back
+
 mount /dev/zoom/linux /lvm 
+
 
