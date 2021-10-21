@@ -226,6 +226,7 @@ for folder :- scp -ri r_login.pem  artifactory-oss-6.7.2.tar.gz  ec2-user@34.222
 To reduce or shrink the size of LVM partioned:
 
 fdisk does not have flexibilty to shrink the size of partion , once its created that its and this  can be done with advance lvm (logical volume manager)
+
 Actions to perform:
 
 unmount filesystem using umount command
